@@ -1,7 +1,38 @@
 /*
-Nom du ficher : U2A[file]_fidélisation.as
+Nom du ficher : U2A[file]_fidelisation.as
 Programmeur : Dominik Dumas
 Date : 03 mai 2018
 Description : Cette application sert à gérer les points de loyalité chez les clients de la compagnie
 */
 
+package {
+    import flash.display.*;
+    import flash.events.*;
+
+    public class U2A[file]_fidelisation extends MovieClip {
+
+        private var membres:Array = new Array();
+
+        // class constructeur
+        public function U2A[file]_fidelisation():void {
+
+            // event listeners goes here
+
+        }
+
+        // fonction pour afficher les membres
+        public function afficher():void {
+
+            // code pour l'affichage
+
+        }
+
+        // fonction pour ajouter un membre
+        public function ajouter():void {
+
+            // code pour l'ajout
+
+        }
+
+    }
+}
