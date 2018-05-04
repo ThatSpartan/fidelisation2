@@ -1,0 +1,7 @@
+/*
+Nom du ficher : U2A[file]_fidélisation.as
+Programmeur : Dominik Dumas
+Date : 03 mai 2018
+Description : Cette application sert à gérer les points de loyalité chez les clients de la compagnie
+*/
+
