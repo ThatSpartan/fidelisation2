@@ -7,34 +7,65 @@ package {
 
     public class membre {
 		
-		private var firstName:String;
-		private var lastName:String;
+		private var prenom:String;
+		private var nom:String;
+		private var points:Array = new Array();
 
-        public function membre() {
+        public function membre() {}
+		
+		public function mettrePrenom(val:String):void {
 			
-			
+			prenom = val;
 
         }
 		
-		public function SetFirstName(val:String):void {
+		public function mettreNom(val:String):void {
 			
-			firstName = val;
+			nom = val;
 
         }
 		
-		public function SetLastName(val:String):void {
+		public function nomComplet():String {
 			
-			lastName = val;
-
-        }
-		
-		public function GetFullName():String {
-			
-			return firstName + ' ' + lastName;
+			return prenom + ' ' + nom;
 
         }
         
-        // autres methodes
+     	public function mettrePoints(aPoints) {
+			
+			trace('mettre points');
+			for each(var p in aPoints) {
+				
+				p = int(p);
+				if (p != 0) {
+					points.push(p);
+				}
+				
+			}
+			
+		}
+		
+		public function avoirPoints():String {
+			if (points.length != 0) {
+				var p:String = ' -- ';
+				var total:int = 0;
+				
+				for each(var n in points) {
+					
+					p += n + ', ';
+					total += n;
+					
+				}
+				
+				p = p.slice(0, -2);
+				
+				trace('points = ' + p);
+				
+				return p
+			} else {
+				return '';
+			}
+		}
 
     }
 
