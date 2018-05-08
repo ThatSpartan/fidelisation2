@@ -8,6 +8,7 @@ Description : Cette application sert à gérer les points de loyalité chez les 
 // < [] {} \n
 
 package {
+	// importer les modules display et events
     import flash.display.*;
     import flash.events.*;
 
