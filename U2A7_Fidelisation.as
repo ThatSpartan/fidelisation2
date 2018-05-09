@@ -14,12 +14,12 @@ package {
 
     public class U2A7_Fidelisation extends MovieClip {
 
-        private var membres:Array = new Array();
+        private var membres:Array = new Array();	// variable pour stocker la liste des membres
 
         // class constructeur
         public function U2A7_Fidelisation():void {
 
-            // event listeners goes here
+            // ajout des écouteurs d'événements sur les boutons afficher, ajouter, enlever
 			btnAfficher.addEventListener(MouseEvent.CLICK, afficher);
 
         }
@@ -31,26 +31,24 @@ package {
 			var prenom:String = txtPrenom.text;
 			var nom:String = txtNom.text;
 			var points:Array;
-			trace('typeof ' + typeof(points));
-			trace('points texte ' + txtPoints.text);
 			
 			// si la boite texte des points est vide, ne pas affecter de valeur
 			// si la boite texte des points contient un ou plusieurs chiffres, lui affecter ces chiffres
 			if (txtPoints.text == '') {
-				trace('aucun point');
+				
 				points = [];
 				
 			} else {
 				
-				points = (txtPoints.text).split(' ');
-				trace('les points a ajouter sont : ' + points);
+				points = (txtPoints.text).split(' ');	// séparer les chiffres par les espaces
 				
 			}
 			
-			ajouter(prenom, nom, points);
+			ajouter(prenom, nom, points);		// ajouter le membre
 			
 			var msg:String = '------------';
 			
+			// pour chacun des membres, ajouter son nom et ses points à la boite d'affichage
 			for each(var mem in membres) {
 
 				msg = msg + '\n' + mem.nomComplet();
@@ -60,16 +58,23 @@ package {
 			
 			msg += '\n------------'
 			
-			trace(msg);
+			// afficher le message à la fenêtre
 			txtAffiche.text = msg;
 
         }
 
+		// fonction qui enlève un membre des données
+		public function enlever():void {
+			
+		}
+
         // fonction pour ajouter un membre
         public function ajouter(prenom, nom, points:Array):void {
 			
+			// variable qui stock si le membre est déjà dans les données
 			var existe:Boolean = false;
 
+			// pour tous les membres, si le nom complet entré équivaut à un des membres existant, affecter true à existe
 			for each(var mem in membres) {
 				
 				var nomComplet = prenom + ' ' + nom;
@@ -81,13 +86,19 @@ package {
 				}
 			}
 			
+			// si le membre n'existe pas, continuer
 			if (!existe) {
 			
+				// créer le nouveau membre
 				var nouveauMembre:membre = new membre();
 			
+				// ajouter son prénom et son nom
 				nouveauMembre.mettrePrenom(prenom);
 				nouveauMembre.mettreNom(nom);
 				trace(typeof(points));
+
+				// si aucun points n'est entrés, rien faire
+				// si des points sont entrés, les ajouter
 				if (points == []) {
 					
 					trace('aucun points a ajouter');
@@ -98,6 +109,7 @@ package {
 					
 				}
 			
+				// ajouter ce membre à la liste de tous les membres
 				membres.push(nouveauMembre);
 			
 			}
