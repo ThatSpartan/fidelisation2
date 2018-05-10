@@ -75,7 +75,27 @@ package {
 
 		// fonction qui enlève un membre des données
 		public function enlever(EVENT:MouseEvent):void {
+
 			trace('enlever');
+
+			var nom:String = txtPrenom.text + ' ' + txtNom.text;
+
+			for each(var mem in membres) {
+
+				if (mem.nomComplet() == nom) {
+
+					membres.remove(mem);
+					// or
+					membres.splice(membres.indexOf(mem), 1);
+
+					break;
+
+				}
+
+			}
+
+			afficher();
+
 		}
 
         // fonction pour ajouter un membre
