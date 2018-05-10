@@ -26,6 +26,18 @@ package {
 			include "U2A7_Membres.as"; // inclure un fichier incluant des membres
 
         }
+
+		// fonction pour enlever les charactères non voulu
+		public function obtenir(str):String {
+
+			var s:String = '';
+			for (var i:int = 0; i < str.length; i++) {
+
+				trace(str.charAt(i) + ' - ' + str.charCodeAt(i))
+
+			}
+
+		}
 		
 		// fonction pour afficher les membres
 		public function afficher():void {
