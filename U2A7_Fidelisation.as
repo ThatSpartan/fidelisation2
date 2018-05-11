@@ -32,6 +32,7 @@ package {
 
 			var charcode:int;		// variable pour stocker le code de la lettre
 			var s:String = '';		// variable pour stocker la liste des charactères qui sont des lettres
+			
 			// loop pour chacunes des lettres
 			for (var i:int = 0; i < str.length; i++) {
 
@@ -41,7 +42,7 @@ package {
 				// si le charactère est entre a à z ou A à Z, l'ajouter à la liste
 				if ( (65 <= charcode && charcode <= 90) || (97 <= charcode && charcode <= 122) ) {
 					
-					s += i;
+					s += str.charAt(i);
 
 				}
 
@@ -110,8 +111,6 @@ package {
 
 				if (mem.nomComplet() == nom) {
 
-					membres.remove(mem);
-					// or
 					membres.splice(membres.indexOf(mem), 1);
 
 					break;
