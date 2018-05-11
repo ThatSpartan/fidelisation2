@@ -30,12 +30,24 @@ package {
 		// fonction pour enlever les charactères non voulu
 		public function obtenir(str):String {
 
-			var s:String = '';
+			var charcode:int;		// variable pour stocker le code de la lettre
+			var s:String = '';		// variable pour stocker la liste des charactères qui sont des lettres
+			// loop pour chacunes des lettres
 			for (var i:int = 0; i < str.length; i++) {
 
-				trace(str.charAt(i) + ' - ' + str.charCodeAt(i))
+				trace(str.charAt(i) + ' - ' + str.charCodeAt(i))//{test}
+				
+				charcode = str.charCodeAt(i); 		// affecter le code à une variable
+				// si le charactère est entre a à z ou A à Z, l'ajouter à la liste
+				if ( (65 <= charcode && charcode <= 90) || (97 <= charcode && charcode <= 122) ) {
+					
+					s += i;
+
+				}
 
 			}
+
+			return s;		// retourner la liste
 
 		}
 		
@@ -63,8 +75,10 @@ package {
         public function entrer(EVENT:MouseEvent):void {
 			
 			// chercher le prenom, le nom et les points entrées
-			var prenom:String = txtPrenom.text;
-			var nom:String = txtNom.text;
+			// var prenom:String = txtPrenom.text;
+			var prenom:String = obtenir(txtPrenom.text);
+			// var nom:String = txtNom.text;
+			var nom:String = obtenir(txtNom.text);
 			var points:Array;
 			
 			// si la boite texte des points est vide, ne pas affecter de valeur
