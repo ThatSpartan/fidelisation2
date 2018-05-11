@@ -5,8 +5,6 @@ Date : 03 mai 2018
 Description : Cette application sert à gérer les points de loyalité chez les clients de la compagnie
 */
 
-// < [] {} \n
-
 package {
 	// importer les modules display et events
     import flash.display.*;
@@ -25,6 +23,9 @@ package {
 			
 			include "U2A7_Membres.as"; // inclure un fichier incluant des membres
 
+			// afficher les membres au départ
+			afficher();
+			
         }
 
 		// fonction pour enlever les charactères non voulu
@@ -35,8 +36,6 @@ package {
 			
 			// loop pour chacunes des lettres
 			for (var i:int = 0; i < str.length; i++) {
-
-				trace(str.charAt(i) + ' - ' + str.charCodeAt(i))//{test}
 				
 				charcode = str.charCodeAt(i); 		// affecter le code à une variable
 				// si le charactère est entre a à z ou A à Z, l'ajouter à la liste
@@ -102,8 +101,6 @@ package {
 
 		// fonction qui enlève un membre des données
 		public function enlever(EVENT:MouseEvent):void {
-
-			trace('enlever');
 
 			var nom:String = txtPrenom.text + ' ' + txtNom.text;
 
